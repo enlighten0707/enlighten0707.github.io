@@ -80,5 +80,9 @@
       <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
     {% endif %}
 
+    {% if post.description %}
+      <p class="archive__item-description" style="font-style: italic; font-size: 0.9em; color: #666; margin-top: 0.5em;"><em>{{ post.description }}</em></p>
+    {% endif %}
+
   </article>
 </div>
