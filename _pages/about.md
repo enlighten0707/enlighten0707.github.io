@@ -1,56 +1,107 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+I'm a Ph.D student in Shanghai Jiao Tong University (SJTU), under the supervision of Prof. [Cewu Lu](https://www.mvig.org/) and [Yong-Lu Li](https://dirtyharrylyl.github.io/). Prior to that, I received my Bachelor's degree from SJTU in 2022. 
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+My research focuses on human-object interaction (HOI). 
+To understand HOI, it is important to recognize activity semantics and estimate human/object 3D geometry.
+Also, HOI data serves as important knowledge source to facilitate robot foundation models.
 
-A data-driven personal website
+Selected Publications
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+<div style="margin-bottom: 25px;">
+  <h3 style="margin: 0 0 8px 0;">From Isolated Islands to Pangea: Unifying Semantic Space for Human Action Understanding</h3>
+  <p style="margin: 0 0 8px 0; color: #666; font-size: 16px;">Yong-Lu Li*, <strong>Xiaoqian Wu*</strong>, Xinpeng Liu, Yiming Dou, Yikun Ji, Junyi Zhang, Yixing Li, Jingru Tan, Xudong Lu, Cewu Lu</p>
+  <p style="margin: 0; color: #666; font-size: 16px;">
+    CVPR 2024 (highlight)
+    <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Li_From_Isolated_Islands_to_Pangea_Unifying_Semantic_Space_for_Human_CVPR_2024_paper.pdf" style="margin-left: 5px; margin-right: 5px;">[paper]</a>
+    <a href="https://github.com/DirtyHarryLYL/Sandwich" style="margin-right: 5px;">[code]</a>
+    <a href="https://mvig-rhos.com/pangea">[project]</a>
+  </p>
+</div>
 
-Getting started
+<div style="margin-bottom: 25px;">
+  <h3 style="margin: 0 0 8px 0;">Symbol-LLM: Leverage Language Models for Symbolic System in Visual Human Activity Reasoning</h3>
+  <p style="margin: 0 0 8px 0; color: #666; font-size: 16px;"><strong>Xiaoqian Wu</strong>, Yong-Lu Li, Jianhua Sun, Cewu Lu</p>
+  <p style="margin: 0; color: #666; font-size: 16px;">
+    NeurIPS 2023
+    <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/5edb57c05c81d04beb716ef1d542fe9e-Paper-Conference.pdf" style="margin-left: 5px; margin-right: 5px;">[paper]</a>
+    <a href="https://github.com/enlighten0707/Symbol-LLM" style="margin-right: 5px;">[code]</a>
+    <a href="https://mvig-rhos.com/symbol_llm">[project]</a>
+  </p>
+</div>
+
+<div style="margin-bottom: 25px;">
+  <h3 style="margin: 0 0 8px 0;">Mining Cross-Person Cues for Body-Part Interactiveness Learning in HOI Detection</h3>
+  <p style="margin: 0 0 8px 0; color: #666; font-size: 16px;"><strong>Xiaoqian Wu*</strong>, Yong-Lu Li*, Xinpeng Liu, Junyi Zhang, Yuzhe Wu, Cewu Lu</p>
+  <p style="margin: 0; color: #666; font-size: 16px;">
+    ECCV 2022
+    <a href="https://arxiv.org/pdf/2207.14192" style="margin-left: 5px; margin-right: 5px;">[paper]</a>
+    <a href="https://github.com/enlighten0707/Body-Part-Map-for-Interactiveness">[code]</a>
+  </p>
+</div>
+
+<div style="margin-bottom: 25px;">
+  <h3 style="margin: 0 0 8px 0;">HAKE: A Knowledge Engine Foundation for Human Activity Understanding</h3>
+  <p style="margin: 0 0 8px 0; color: #666; font-size: 16px;">Yong-Lu Li, Xinpeng Liu, <strong>Xiaoqian Wu</strong>, Yizhuo Li, Zuoyu Qiu, Liang Xu, Yue Xu, Hao-Shu Fang, Cewu Lu</p>
+  <p style="margin: 0; color: #666; font-size: 16px;">
+    TPAMI 2022
+    <a href="https://arxiv.org/pdf/2202.06851" style="margin-left: 5px; margin-right: 5px;">[paper]</a>
+    <a href="https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/HAKE-Reason" style="margin-right: 5px;">[code]</a>
+    <a href="http://hake-mvig.cn/">[project]</a>
+  </p>
+</div>
+
+<div style="margin-bottom: 25px;">
+  <h3 style="margin: 0 0 8px 0;">Transferable Interactiveness Knowledge for Human-Object Interaction Detection</h3>
+  <p style="margin: 0 0 8px 0; color: #666; font-size: 16px;">Yong-Lu Li, Xinpeng Liu, <strong>Xiaoqian Wu</strong>, Xijie Huang, Liang Xu, Cewu Lu</p>
+  <p style="margin: 0; color: #666; font-size: 16px;">
+    TPAMI 2021
+    <a href="https://arxiv.org/pdf/2101.10292" style="margin-left: 5px; margin-right: 5px;">[paper]</a>
+    <a href="https://github.com/DirtyHarryLYL/Transferable-Interactiveness-Network" style="margin-right: 5px;">[code]</a>
+    <a href="http://hake-mvig.cn/">[project]</a>
+  </p>
+</div>
+
+<!-- Projects
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+<div style="display: flex; align-items: center; margin-bottom: 30px;">
+  <div style="flex: 0 0 200px; margin-right: 20px;">
+    <img src="/images/project1.gif" alt="Project 1" style="width: 100%; height: auto; border: 1px solid #ddd;">
+  </div>
+  <div style="flex: 1;">
+    <h3 style="margin: 0 0 10px 0;">Project Title 1</h3>
+    <p style="margin: 0 0 5px 0; color: #666;"><strong>Duration:</strong> 2023 - Present</p>
+    <p style="margin: 0 0 10px 0;">Brief description of the project and its goals.</p>
+    <p style="margin: 0;">
+      <a href="#" style="margin-right: 10px;">[GitHub]</a>
+      <a href="#" style="margin-right: 10px;">[Demo]</a>
+      <a href="#">[Documentation]</a>
+    </p>
+  </div>
+</div>
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
-
-**Markdown generator**
-
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
-
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
-
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
-
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+<div style="display: flex; align-items: center; margin-bottom: 30px;">
+  <div style="flex: 0 0 200px; margin-right: 20px;">
+    <img src="/images/project2.gif" alt="Project 2" style="width: 100%; height: auto; border: 1px solid #ddd;">
+  </div>
+  <div style="flex: 1;">
+    <h3 style="margin: 0 0 10px 0;">Project Title 2</h3>
+    <p style="margin: 0 0 5px 0; color: #666;"><strong>Duration:</strong> 2022 - 2023</p>
+    <p style="margin: 0 0 10px 0;">Brief description of the project and its goals.</p>
+    <p style="margin: 0;">
+      <a href="#" style="margin-right: 10px;">[GitHub]</a>
+      <a href="#">[Paper]</a>
+    </p>
+  </div>
+</div>
+-->
