@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Replace the SEO text, page title, external links, and media paths below with your own project content. -->
+  <meta charset="utf-8">
+  <meta name="description" content="GPS: Geometric Primary Structure for articulated parts perception in robot manipulation">
+  <meta name="keywords" content="articulated parts, robot manipulation, RGB-D, virtual reality annotation, geometry structure">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> GPS </title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='0.9em' font-size='90'>🧭</text>
+    </svg>">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  
+  <!-- 🆕 引入 Fancybox CSS (用于点击放大图片) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    .wg-button {
+      background-color: #5E7FA8;
+      color: #ffffff !important;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .wg-button span,
+    .wg-button .icon,
+    .wg-button i {
+      color: #ffffff !important;
+    }
+
+    .wg-button:hover,
+    .wg-button:focus {
+      background-color: #b85c5c;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(202, 111, 111, 0.35);
+    }
+
+    .wg-button:active {
+      background-color: #a95757;
+    }
+
+    .wg-button:visited {
+      color: #ffffff;
+    }
+
+    /* 🎬 视频滑窗样式 */
+    .video-slider-section {
+      padding-top: 1rem;
+      padding-bottom: 3rem;
+    }
+
+    .item-video {
+      margin: 0 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #000;
+      position: relative; /* 为 caption 定位 */
+    }
+
+    .item-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tldr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin: 24px 0 16px;
+    }
+
+    .tldr-video-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      background: #000;
+    }
+
+    .tldr-video-card video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .tldr-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 视频 Caption 样式 */
+    .video-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.65); /* 半透明黑色背景 */
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 6px 10px;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none; /* 让点击穿透 Caption 直接点到图片/视频 */
+    }
+
+    /* 🖼️ 漫画/图片滑窗样式 */
+    .item-comic {
+      margin: 0 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #fff;
+      position: relative;
+    }
+
+    /* 🆕 让包裹图片的链接铺满整个卡片，并显示放大镜光标 */
+    .item-comic a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: zoom-in; 
+    }
+
+    .item-comic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .comic-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none; /* 关键：防止点击字幕时无法触发放大 */
+    }
+
+    /* 覆盖 Carousel 导航按钮颜色 */
+    .slider-navigation-previous,
+    .slider-navigation-next {
+      background-color: #5E7FA8 !important;
+      border-color: #5E7FA8 !important;
+      color: #fff !important;
+      opacity: 0.8;
+      transition: all 0.2s ease;
+    }
+
+    .slider-navigation-previous:hover,
+    .slider-navigation-next:hover {
+      background-color: #b85c5c !important;
+      border-color: #b85c5c !important;
+      opacity: 1;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+  <!-- 🆕 引入 Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+</head>
+
+<body>
+  <!-- Project header: title, authors, affiliations, and action buttons. -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">
+              <span style="display: inline-block;">🧭</span> 
+              <span style="color:#ca6f6f;">GPS</span>:
+              Geometric Primary Structure for Articulated Parts Perception in Robot Manipulation
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://enlighten0707.github.io/">Xiaoqian Wu</a>,
+              </span>
+              <span class="author-block">
+                Yejie Guo,
+              </span>
+              <span class="author-block">
+                Xiaoyang Chen,
+              </span>
+              <span class="author-block">
+                Lixin Yang,
+              </span>
+              <span class="author-block">
+                Cewu Lu*,
+              </span>
+              <span class="author-block">
+                Yong-Lu Li*
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Shanghai Jiao Tong University</span>
+            </div>
+
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+              * Corresponding Authors
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <span class="button is-normal is-rounded wg-button">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>paper TBD</span>
+                  </span>
+                </span>
+                <span class="link-block">
+                  <span class="button is-normal is-rounded wg-button">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv TBD</span>
+                  </span>
+                </span>
+                <span class="link-block">
+                  <span class="button is-normal is-rounded wg-button">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>code TBD</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TLDR Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3"
+        style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #333; text-align: center;">TLDR</h3>
+
+      <div class="tldr-grid">
+        <div class="tldr-video-card">
+          <video autoplay controls muted loop playsinline preload="auto">
+            <source src="video/vr_demo1.mp4?v=2" type="video/mp4">
+          </video>
+        </div>
+        <div class="tldr-video-card">
+          <video autoplay controls muted loop playsinline preload="auto">
+            <source src="video/vr_demo2.mp4?v=2" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="content has-text-centered"
+        style="font-family: 'Arial', sans-serif; font-size: 20px; line-height: 1.6; color: #444;">
+        We introduce a VR-based data collection system for articulated objects in real-world, which balances scalability and data quality.
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+ <section class="section">
+    <!-- Replace the teaser gallery and abstract text in this section. -->
+    <div class="container is-max-desktop">
+      <h3 class="title is-3"
+        style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #333;text-align: center;">Abstract</h3>
+
+      <!-- 👇 2. 摘要文字 (现在在下方，宽度保持不变) 👇 -->
+      <div class="content has-text-justified"
+        style="font-family: 'Arial', sans-serif; font-size: 20px; line-height: 1.6; color: #444;">
+        We are surrounded by various objects with movable, articulated parts, <em>e.g.</em>, box, handle, door.
+        An accurate and generalizable perception of articulated parts is essential to enhance robotic manipulation capabilities.
+        Building on this need, recent efforts in articulated parts perception have followed two main directions:
+        one line of work uses pose-based representation, which requires high manual cost; in parallel, affordance-based methods extract future object motion from point tracking without additional manual efforts, but suffer from low-quality data.
+        In this paper, we propose a new representation of articulated parts, <strong>Principal Geometry Structure (PGS)</strong>, an abstraction of the part geometry structure to balance scalability and quality.
+        For efficient and scalable data collection, PGS is integrated with a portable Virtual Reality (VR) device and requires only one minute to annotate one object sequence.
+        This direct human annotation provides higher quality than the estimated affordance.
+        With this efficient VR-PGS system, we collect <strong>41K</strong> frames for <strong>234</strong> objects across six part classes, and train a generalizable PGS model with a single RGB-D object image as input.
+        For object manipulation, we deploy a heuristic policy based on PGS prediction.
+        Without any in-domain fine-tuning, our method achieves a <strong>73%</strong> success rate, covering 270 initial states for 9 objects.
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-3"
+        style="font-family: 'Ubuntu Mono','Fira Code'; font-weight: 700;text-align: center; color: #333;">Citation</h3>
+      <pre style="font-family: 'Roboto Mono', monospace; font-size: 17px;"><code>TODO</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+        <br>
+        Website Template Designed by <a href="https://selen-suyue.github.io">Yue Su</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 脚本逻辑：轮播初始化 + Fancybox -->
+  <script>
+    // --- 1. Carousel Initialization Logic ---
+    $(document).ready(function() {
+      // 检查 Bulma Carousel 库是否加载
+      if (typeof bulmaCarousel !== 'undefined') {
+        var carousels = bulmaCarousel.attach('.carousel', {
+          slidesToScroll: 1,
+          slidesToShow: 2,   // 每次显示2个
+          loop: true,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          pagination: false, // 隐藏下方圆点
+          icons: {
+              previous: '<span class="icon is-large"><i class="fas fa-angle-left fa-2x"></i></span>',
+              next: '<span class="icon is-large"><i class="fas fa-angle-right fa-2x"></i></span>'
+          }
+        });
+      } else {
+        console.warn('Bulma Carousel library not loaded.');
+      }
+
+      // --- 2. Fancybox Initialization (New) ---
+      // 显式绑定，确保即使在 carousel 复制元素的情况下也能正常工作
+      Fancybox.bind("[data-fancybox]", {
+        // 可以在这里添加配置，例如无限循环
+        loop: true,
+        buttons: [
+          "zoom",
+          "slideShow",
+          "thumbs",
+          "close"
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>
