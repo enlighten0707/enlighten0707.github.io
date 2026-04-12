@@ -244,7 +244,7 @@
   <!-- Project header: title, authors, affiliations, and action buttons. -->
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
 
@@ -259,28 +259,24 @@
                 <a href="https://enlighten0707.github.io/">Xiaoqian Wu</a>,
               </span>
               <span class="author-block">
-                Yejie Guo,
+                <a href="https://scholar.google.com/citations?user=SqAkpm0AAAAJ&hl=zh-CN&oi=ao">Yejie Guo</a>,
               </span>
               <span class="author-block">
                 Xiaoyang Chen,
               </span>
               <span class="author-block">
-                Lixin Yang,
+                <a href="https://lixiny.github.io/">Lixin Yang</a>,
               </span>
               <span class="author-block">
-                Cewu Lu*,
+                <a href="https://www.mvig.org/">Cewu Lu*</a>,
               </span>
               <span class="author-block">
-                Yong-Lu Li*
+                <a href="https://dirtyharrylyl.github.io/">Yong-Lu Li*</a>,
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">Shanghai Jiao Tong University</span>
-            </div>
-
-            <div style="margin-top: 10px; margin-bottom: 10px;">
-              * Corresponding Authors
             </div>
 
             <div class="column has-text-centered">
@@ -314,11 +310,8 @@
   </section>
 
   <!-- TLDR Section -->
-  <section class="section">
+  <section class="section" style="padding-top: 0.5rem;">
     <div class="container is-max-desktop">
-      <h3 class="title is-3"
-        style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #333; text-align: center;">TLDR</h3>
-
       <div class="tldr-grid">
         <div class="tldr-video-card">
           <video autoplay controls muted loop playsinline webkit-playsinline preload="auto">
@@ -334,7 +327,7 @@
 
       <div class="content has-text-centered"
         style="font-family: 'Arial', sans-serif; font-size: 20px; line-height: 1.6; color: #444;">
-        We introduce a VR-based data collection system for articulated objects in real-world, which balances scalability and data quality.
+        We introduce a VR-based data collection system to annotate <strong>G</strong>eometric <strong>P</strong>rimary <strong>S</strong>tructure(<strong>GPS</strong>) of articulated objects in real-world, which balances scalability and data quality.
       </div>
     </div>
   </section>
@@ -344,7 +337,7 @@
     <!-- Replace the teaser gallery and abstract text in this section. -->
     <div class="container is-max-desktop">
       <h3 class="title is-3"
-        style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #333;text-align: center;">Abstract</h3>
+        style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #333;text-align: center;">Motivation</h3>
 
       <!-- 👇 2. 摘要文字 (现在在下方，宽度保持不变) 👇 -->
       <div class="content has-text-justified"
@@ -356,9 +349,6 @@
         In this paper, we propose a new representation of articulated parts, <strong>Geometric Primary Structure (PGS)</strong>, an abstraction of the part geometry structure to balance scalability and quality.
         For efficient and scalable data collection, PGS is integrated with a portable Virtual Reality (VR) device and requires only one minute to annotate one object sequence.
         This direct human annotation provides higher quality than the estimated affordance.
-        With this efficient VR-PGS system, we collect <strong>41K</strong> frames for <strong>234</strong> objects across six part classes, and train a generalizable PGS model with a single RGB-D object image as input.
-        For object manipulation, we deploy a heuristic policy based on PGS prediction.
-        Without any in-domain fine-tuning, our method achieves a <strong>73%</strong> success rate, covering 270 initial states for 9 objects.
       </div>
 
     </div>
@@ -374,7 +364,7 @@
       <div class="content has-text-justified"
         style="font-family: 'Arial', sans-serif; font-size: 20px; line-height: 1.6; color: #444;">
         Efficient annotation: recording one annotated manipulation video for an object takes less than one minute.
-        Using our portable and efficient VR-GPS system, we collect <strong>41K</strong> frames for <strong>234</strong> objects.
+        Using our portable and efficient VR-GPS system, we collect <strong>41K</strong> frames for <strong>234</strong> objects across six part classes.
       </div>
     </div>
   </section>
@@ -421,6 +411,14 @@
             <source src="video/robot_demo/notebook.web.mp4" type="video/mp4">
           </video>
         </div>
+      </div>
+
+      <div class="content"
+        style="margin-top: 20px; font-family: 'Arial', sans-serif; color: #444;">
+        <p style="font-size: 20px; line-height: 1.6; text-align: left !important;">
+          For object manipulation, we deploy a heuristic policy based on PGS prediction.<br>
+          Without any in-domain fine-tuning, our method achieves a <strong>73%</strong> success rate, covering 270 initial states for 9 objects.
+        </p>
       </div>
     </div>
   </section>

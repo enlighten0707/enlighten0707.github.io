@@ -9,12 +9,69 @@ redirect_from:
 
 I'm a Ph.D student in Shanghai Jiao Tong University (SJTU), under the supervision of Prof. [Cewu Lu](https://www.mvig.org/) and [Yong-Lu Li](https://dirtyharrylyl.github.io/). Prior to that, I received my Bachelor's degree from SJTU in 2022. 
 
-My research focuses on human-object interaction (HOI). 
-To understand HOI, it is important to recognize activity semantics and estimate human/object 3D geometry.
-Also, HOI serves as an important knowledge source to facilitate robot foundation models.
+My research focuses on how agents interact with objects. 
+Prior to 2024, I concentrated on **Human-Object Interaction (HOI)** — detecting and recognizing interaction semantics between humans and objects, with representative works including [PartMap](https://arxiv.org/pdf/2207.14192), [Symbol-LLM](https://proceedings.neurips.cc/paper_files/paper/2023/file/5edb57c05c81d04beb716ef1d542fe9e-Paper-Conference.pdf), and [Pangea](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_From_Isolated_Islands_to_Pangea_Unifying_Semantic_Space_for_Human_CVPR_2024_paper.pdf). Since then, I have expanded my research toward **transferring HOI knowledge to robotic systems**, and [GPS](https://enlighten0707.github.io/gps/) represents an initial outcome of this ongoing effort.
 
 Publications
 ======
+
+<div style="display: flex; align-items: center; margin-bottom: 30px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px;">
+  <div style="flex: 0 1 200px; max-width: 200px; width: 100%; margin-right: 20px; display: flex; gap: 8px;">
+    <video id="gps-video-1" autoplay muted loop playsinline preload="metadata" style="width: calc(50% - 4px); height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block;">
+      <source src="/images/gps1_cropped.mp4?v=3" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video id="gps-video-2" autoplay muted loop playsinline preload="metadata" style="width: calc(50% - 4px); height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block;">
+      <source src="/images/gps2_cropped.mp4?v=3" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style="flex: 1;">
+    <h3 style="margin: 0 0 8px 0; color: #333;">GPS: Geometric Primary Structure for Articulated Parts Perception in Robot Manipulation</h3>
+    <p style="margin: 0 0 8px 0; color: #666; font-size: 15px;"><strong>Xiaoqian Wu</strong>, Yejie Guo, Xiaoyang Chen, Lixin Yang, Cewu Lu, Yong-Lu Li</p>
+    <p style="margin: 0 0 8px 0; color: #666; font-size: 15px;">
+      <strong>CVPR 2026 (findings)</strong>
+      <a href="https://enlighten0707.github.io/" style="margin-left: 8px; margin-right: 5px; color: #007acc;">[paper]</a>
+      <a href="https://enlighten0707.github.io/" style="margin-right: 5px; color: #007acc;">[code]</a>
+      <a href="https://enlighten0707.github.io/gps/" style="color: #007acc;">[project]</a>
+      (coming soon)
+    </p>
+    <p style="margin: 0; color: #888; font-size: 14px; font-style: italic; line-height: 1.4;">VR-based data collection system for articulated objects in real-world, which balances scalability and data quality.</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var v1 = document.getElementById('gps-video-1');
+    var v2 = document.getElementById('gps-video-2');
+    if (!v1 || !v2) return;
+
+    var syncing = false;
+
+    function align(master, slave) {
+      if (syncing) return;
+      if (Math.abs(master.currentTime - slave.currentTime) <= 0.12) return;
+      syncing = true;
+      slave.currentTime = master.currentTime;
+      syncing = false;
+    }
+
+    function playBoth(master, slave) {
+      align(master, slave);
+      slave.play().catch(function () {});
+    }
+
+    v1.addEventListener('play', function () { playBoth(v1, v2); });
+    v2.addEventListener('play', function () { playBoth(v2, v1); });
+    v1.addEventListener('seeking', function () { align(v1, v2); });
+    v2.addEventListener('seeking', function () { align(v2, v1); });
+    v1.addEventListener('ended', function () { v2.currentTime = 0; });
+    v2.addEventListener('ended', function () { v1.currentTime = 0; });
+    v1.addEventListener('pause', function () { if (!v2.paused) v2.pause(); });
+    v2.addEventListener('pause', function () { if (!v1.paused) v1.pause(); });
+  })();
+</script>
+
 
 <div style="display: flex; align-items: center; margin-bottom: 30px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px;">
   <div style="flex: 0 0 200px; margin-right: 20px;">
@@ -99,39 +156,3 @@ Publications
     <p style="margin: 0; color: #888; font-size: 14px; font-style: italic; line-height: 1.4;">Introduce transferable interactiveness knowledge to enhance human-object interaction detection.</p>
   </div>
 </div>
-
-
-<!-- Projects
-======
-
-<div style="display: flex; align-items: center; margin-bottom: 30px;">
-  <div style="flex: 0 0 200px; margin-right: 20px;">
-    <img src="/images/project1.gif" alt="Project 1" style="width: 100%; height: auto; border: 1px solid #ddd;">
-  </div>
-  <div style="flex: 1;">
-    <h3 style="margin: 0 0 10px 0;">Project Title 1</h3>
-    <p style="margin: 0 0 5px 0; color: #666;"><strong>Duration:</strong> 2023 - Present</p>
-    <p style="margin: 0 0 10px 0;">Brief description of the project and its goals.</p>
-    <p style="margin: 0;">
-      <a href="#" style="margin-right: 10px;">[GitHub]</a>
-      <a href="#" style="margin-right: 10px;">[Demo]</a>
-      <a href="#">[Documentation]</a>
-    </p>
-  </div>
-</div>
-
-<div style="display: flex; align-items: center; margin-bottom: 30px;">
-  <div style="flex: 0 0 200px; margin-right: 20px;">
-    <img src="/images/project2.gif" alt="Project 2" style="width: 100%; height: auto; border: 1px solid #ddd;">
-  </div>
-  <div style="flex: 1;">
-    <h3 style="margin: 0 0 10px 0;">Project Title 2</h3>
-    <p style="margin: 0 0 5px 0; color: #666;"><strong>Duration:</strong> 2022 - 2023</p>
-    <p style="margin: 0 0 10px 0;">Brief description of the project and its goals.</p>
-    <p style="margin: 0;">
-      <a href="#" style="margin-right: 10px;">[GitHub]</a>
-      <a href="#">[Paper]</a>
-    </p>
-  </div>
-</div>
--->
