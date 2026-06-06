@@ -11,7 +11,7 @@ I'm a Ph.D student in Shanghai Jiao Tong University (SJTU), under the supervisio
 
 My research focuses on how agents interact with objects. 
 Prior to 2024, I concentrated on **Human-Object Interaction (HOI)** — detecting and recognizing interaction semantics between humans and objects, with representative works including [PartMap](https://arxiv.org/pdf/2207.14192), [Symbol-LLM](https://proceedings.neurips.cc/paper_files/paper/2023/file/5edb57c05c81d04beb716ef1d542fe9e-Paper-Conference.pdf), and [Pangea](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_From_Isolated_Islands_to_Pangea_Unifying_Semantic_Space_for_Human_CVPR_2024_paper.pdf). Since then, I have expanded my research toward **transferring HOI knowledge to robotic systems**, and [GPS](https://enlighten0707.github.io/gps/) represents an initial outcome of this ongoing effort.
-Currently, I am a Research Intern at **ByteDance Seed**, working on human-like active perception abilities in VLA models.
+<!-- Currently, I am a Research Intern at **ByteDance Seed**, working on human-like active perception abilities in VLA models. -->
 
 Selected Publications
 ======
