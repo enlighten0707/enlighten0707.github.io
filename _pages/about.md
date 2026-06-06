@@ -32,7 +32,7 @@ Publications
     <p style="margin: 0 0 8px 0; color: #666; font-size: 15px;">
       <strong>CVPR 2026 (findings)</strong>
       <a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Wu_Revisiting_Articulated_Parts_Perception_in_Robot_Manipulation_CVPRF_2026_paper.pdf" style="margin-left: 8px; margin-right: 5px; color: #007acc;">[paper]</a>
-      <a href="https://enlighten0707.github.io/" style="margin-right: 5px; color: #007acc;">[code]</a>
+      <a href="https://github.com/enlighten0707/Geometric_Primary_Structure" style="margin-right: 5px; color: #007acc;">[code]</a>
       <a href="https://enlighten0707.github.io/gps/" style="color: #007acc;">[project]</a>
     </p>
     <p style="margin: 0; color: #888; font-size: 14px; font-style: italic; line-height: 1.4;">VR-based data collection system for articulated objects in real-world, which balances scalability and data quality.</p>
