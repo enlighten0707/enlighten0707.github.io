@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Ph.D student in Shanghai Jiao Tong University (SJTU), under the supervision of Prof. [Cewu Lu](https://www.mvig.org/) and [Yong-Lu Li](https://dirtyharrylyl.github.io/). Prior to that, I received my Bachelor's degree from SJTU in 2022. 
+I'm a Ph.D student in Shanghai Jiao Tong University (SJTU), under the supervision of Prof. [Cewu Lu](https://www.mvig.org/). Prior to that, I received my Bachelor's degree from SJTU in 2022.
 
 My research focuses on how agents interact with objects. 
 Prior to 2024, I concentrated on **Human-Object Interaction (HOI)** — detecting and recognizing interaction semantics between humans and objects, with representative works including [PartMap](https://arxiv.org/pdf/2207.14192), [Symbol-LLM](https://proceedings.neurips.cc/paper_files/paper/2023/file/5edb57c05c81d04beb716ef1d542fe9e-Paper-Conference.pdf), and [Pangea](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_From_Isolated_Islands_to_Pangea_Unifying_Semantic_Space_for_Human_CVPR_2024_paper.pdf). Since then, I have expanded my research toward **transferring HOI knowledge to robotic systems**, and [GPS](https://enlighten0707.github.io/gps/) represents an initial outcome of this ongoing effort.
