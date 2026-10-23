@@ -262,3 +262,45 @@
     }
   }
 }
+
+@media screen and (max-width: 924px) {
+  // The navigation script sets inline padding when the Follow button is absent.
+  .sidebar {
+    padding-top: 0 !important;
+  }
+
+  .author__urls-wrapper {
+    display: block;
+    width: 100%;
+    margin-top: 0.75em;
+    cursor: default;
+  }
+
+  .author__urls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em 0.85em;
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    z-index: auto;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    li {
+      white-space: normal;
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

@@ -50,6 +50,86 @@
 
 .page__content {
 
+  .experience-entry {
+    display: grid;
+    grid-template-columns: 165px minmax(0, 1fr);
+    gap: 24px;
+    margin: 0 0 30px;
+    padding: 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    &__aside {
+      border-right: 1px solid #ececec;
+    }
+
+    &__date {
+      color: var(--global-text-color);
+      font-size: 0.8em;
+      opacity: 0.75;
+    }
+
+    &__logo {
+      display: block;
+      width: 120px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 1em;
+    }
+
+    &__body {
+      h3 {
+        margin: 0 0 0.25em;
+      }
+    }
+
+    &__team {
+      margin: 0 0 0.2em;
+      color: var(--global-text-color);
+      font-size: 0.95em;
+
+      em {
+        margin-left: 0.4em;
+        font-weight: normal;
+        opacity: 0.75;
+      }
+    }
+
+    &__area {
+      margin: 0 0 0.65em;
+      color: var(--global-text-color);
+      font-size: 0.95em;
+
+      em {
+        opacity: 0.8;
+      }
+    }
+
+    &__topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+
+      span {
+        padding: 0.2em 0.55em;
+        border: 1px solid #e9edf0;
+        border-radius: 4px;
+        background: #f7f8fa;
+        color: var(--global-text-color);
+        font-size: 0.8em;
+      }
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 1em;
+
+      &__aside {
+        border-right: 0;
+      }
+    }
+  }
+
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--global-border-color);
