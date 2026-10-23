@@ -264,43 +264,60 @@
 }
 
 @media screen and (max-width: 924px) {
-  // The navigation script sets inline padding when the Follow button is absent.
+  // The navigation script sets inline padding when the old Follow menu is absent.
   .sidebar {
     padding-top: 0 !important;
   }
+}
 
-  .author__urls-wrapper {
+.author__links {
+  display: block;
+  margin-top: 0.75em;
+  font-family: $sans-serif;
+}
+
+.author__links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em 0.85em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include breakpoint($large) {
     display: block;
-    width: 100%;
-    margin-top: 0.75em;
-    cursor: default;
   }
 
-  .author__urls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25em 0.85em;
-    position: static;
-    width: 100%;
+  li {
     margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-    z-index: auto;
+    white-space: normal;
+  }
 
-    &:before,
-    &:after {
-      display: none;
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0.5em 0.8em;
+    border: 1px solid var(--global-link-color);
+    border-radius: 999px;
+    background: var(--global-bg-color);
+    color: var(--global-link-color);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-decoration: none;
+
+    @include breakpoint($large) {
+      min-height: 0;
+      padding: 2px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      line-height: 1.5;
     }
 
-    li {
-      white-space: normal;
-    }
-
-    a {
-      margin: 0;
-      padding: 0;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
