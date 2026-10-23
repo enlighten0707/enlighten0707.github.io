@@ -1,0 +1,152 @@
+/* Personal gallery keeps the site shell while giving the images room to breathe. */
+.page.page--gallery {
+  float: none;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page--gallery .page__title {
+  margin-bottom: 0.25em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.personal-gallery {
+  max-width: 1180px;
+  margin: 0 auto 3rem;
+
+  &__intro {
+    margin: 0 0 2rem;
+    color: var(--global-text-color);
+    font-size: 0.95rem;
+    letter-spacing: 0.015em;
+    opacity: 0.7;
+  }
+
+  &__grid {
+    columns: 3;
+    column-gap: clamp(1rem, 2.2vw, 1.75rem);
+  }
+
+  &__card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 clamp(1rem, 2.2vw, 1.75rem);
+    overflow: hidden;
+    break-inside: avoid;
+    border: 1px solid var(--global-border-color);
+    border-radius: 12px;
+    background: var(--global-bg-color);
+    box-shadow: 0 8px 28px rgba(30, 40, 55, 0.07);
+    vertical-align: top;
+    transition: box-shadow 220ms ease, transform 220ms ease;
+
+    &:nth-child(2),
+    &:nth-child(7),
+    &:nth-child(12) {
+      margin-top: 1.15rem;
+    }
+
+    &:nth-child(6) {
+      margin-top: 1.5rem;
+    }
+
+    &:nth-child(8) {
+      margin-top: 1.25rem;
+    }
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(30, 40, 55, 0.17);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: #fff;
+
+    &:focus-visible {
+      outline: 3px solid var(--global-link-color);
+      outline-offset: -3px;
+    }
+  }
+
+  &__link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    transition: transform 350ms ease;
+  }
+
+  &__card:hover img,
+  &__card:focus-within img {
+    transform: scale(1.025);
+  }
+
+  &__caption {
+    position: absolute;
+    inset: auto 0 0;
+    margin: 0;
+    padding: 2.8rem 1.1rem 1rem;
+    background: linear-gradient(transparent, rgba(12, 19, 30, 0.75));
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transform: translateY(7px);
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  &__card:hover &__caption,
+  &__card:focus-within &__caption,
+  &__card.is-caption-visible &__caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .personal-gallery__grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 540px) {
+  .personal-gallery__grid {
+    columns: 1;
+  }
+
+  .personal-gallery__card:nth-child(n) {
+    margin-top: 0;
+  }
+}
+
+@media (hover: none) {
+  .personal-gallery__card:hover .personal-gallery__caption,
+  .personal-gallery__card:focus-within .personal-gallery__caption {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  .personal-gallery__card.is-caption-visible .personal-gallery__caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personal-gallery__card,
+  .personal-gallery__link img,
+  .personal-gallery__caption {
+    transition: none;
+  }
+}

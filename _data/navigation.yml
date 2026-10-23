@@ -7,3 +7,5 @@
 main:
   - title: "About"
     url: /
+  - title: "Personal Gallery"
+    url: /personal-gallery/

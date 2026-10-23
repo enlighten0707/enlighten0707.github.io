@@ -1,0 +1,41 @@
+---
+layout: single
+title: "Personal Gallery"
+permalink: /personal-gallery/
+author_profile: false
+gallery: true
+---
+
+<div class="personal-gallery">
+  <p class="personal-gallery__intro">A collection of favorite moments and worlds.</p>
+
+  <div class="personal-gallery__grid" aria-label="Personal Gallery images">
+    {% for item in site.data.personal_gallery %}
+      {% assign image_url = item.file | prepend: '/images/personal-gallery/' | relative_url %}
+      <figure class="personal-gallery__card">
+        <a class="personal-gallery__link" href="{{ image_url }}" target="_blank" rel="noopener" aria-label="Open {{ item.title | escape }} at full size">
+          <img src="{{ image_url }}" alt="{{ item.title | escape }}" loading="lazy" decoding="async">
+          <figcaption class="personal-gallery__caption">{{ item.title | escape }}</figcaption>
+        </a>
+      </figure>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var gallery = document.querySelector('.personal-gallery');
+    var touchScreen = window.matchMedia('(hover: none)');
+    if (!gallery) return;
+
+    gallery.addEventListener('click', function (event) {
+      var link = event.target.closest('.personal-gallery__link');
+      if (!touchScreen.matches || !link) return;
+
+      event.preventDefault();
+      var card = link.closest('.personal-gallery__card');
+      var visible = card.classList.toggle('is-caption-visible');
+      link.setAttribute('aria-expanded', String(visible));
+    });
+  })();
+</script>
