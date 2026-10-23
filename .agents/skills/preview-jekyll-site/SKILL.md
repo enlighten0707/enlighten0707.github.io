@@ -21,6 +21,6 @@ Run from the repository root. Read the repository's `README.md` section “Runni
    wsl -d Ubuntu-20.04 -u root -- apt-get install -y ruby-dev bundler nodejs build-essential jekyll ruby-jekyll-feed ruby-jekyll-sitemap ruby-jekyll-redirect-from ruby-jekyll-gist ruby-jekyll-paginate
    ```
 
-4. Wait for `Server running` and verify that the page returns HTTP 200 and contains the requested new text or links. For example, in PowerShell: `$page = Invoke-WebRequest -Uri 'http://127.0.0.1:4000/' -NoProxy; $page.StatusCode; $page.Content.Contains('expected text')`. Open `http://127.0.0.1:4000/` in the Codex browser or give the user that link. The fallback omits `jemoji`, which only affects emoji rendering on pages that use it.
+4. Wait for `Server running` and verify that the page returns HTTP 200 and contains the requested new text or links. For example, in PowerShell: `$page = Invoke-WebRequest -Uri 'http://127.0.0.1:4000/' -NoProxy; $page.StatusCode; $page.Content.Contains('expected text')`. Open `http://localhost:4000/` in the Codex browser or give the user that link. Jekyll generates `localhost` asset URLs during `serve`; opening the page through `127.0.0.1` gives fonts and scripts a different origin and the browser blocks them. The fallback omits `jemoji`, which only affects emoji rendering on pages that use it.
 
 Keep the server's session ID so a stale preview can be stopped and restarted after further edits. Do not install dependencies or start a second server when the existing preview is current.
