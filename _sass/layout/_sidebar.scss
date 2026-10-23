@@ -321,4 +321,65 @@
       text-decoration: underline;
     }
   }
+
+  .author__social-icon {
+    display: none;
+  }
+
+  @include breakpoint($large) {
+    li + li {
+      margin-top: 0.25em;
+    }
+
+    .author__social-link {
+      display: flex;
+      width: max-content;
+      gap: 0.55em;
+      padding: 0.35em;
+      border-radius: 8px;
+      color: var(--global-text-color);
+      white-space: nowrap;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        background: var(--social-bg);
+        transform: translateX(2px);
+        text-decoration: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--social-color);
+        outline-offset: 2px;
+      }
+    }
+
+    .author__social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--social-bg);
+      color: var(--social-color);
+      font-size: 15px;
+    }
+
+    .author__social-link--scholar {
+      --social-color: #4285f4;
+      --social-bg: rgba(66, 133, 244, 0.1);
+    }
+
+    .author__social-link--linkedin {
+      --social-color: #0a66c2;
+      --social-bg: rgba(10, 102, 194, 0.1);
+    }
+
+    .author__social-link--x {
+      --social-color: var(--global-text-color);
+      --social-bg: rgba(127, 127, 127, 0.1);
+    }
+  }
 }

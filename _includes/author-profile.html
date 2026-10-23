@@ -35,7 +35,7 @@
         <li><a href="{{ author.arxiv }}"><i class="ai ai-arxiv ai-fw icon-pad-right"></i>arXiv</a></li>
       {% endif %}      
       {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}">Google Scholar</a></li>
+        <li><a class="author__social-link author__social-link--scholar" href="{{ author.googlescholar }}"><span class="author__social-icon" aria-hidden="true"><i class="ai ai-google-scholar"></i></span>Google Scholar</a></li>
       {% endif %}
       {% if author.semantic %}
         <li><a href="{{ author.semantic }}"><i class="ai ai-semantic-scholar ai-fw icon-pad-right"></i>Semantic Scholar</a></li>
@@ -108,7 +108,7 @@
         <li><a href="https://last.fm/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>Last.fm</a></li>
       {% endif %}      
       {% if author.linkedin %}
-        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}/">LinkedIn</a></li>
+        <li><a class="author__social-link author__social-link--linkedin" href="https://www.linkedin.com/in/{{ author.linkedin }}/"><span class="author__social-icon" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>LinkedIn</a></li>
       {% endif %}      
       {% if author.mastodon %}
         <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i>Mastodon</a></li>
@@ -132,7 +132,7 @@
         <li><a href="https://{{ author.tumblr }}.tumblr.com"><i class="fab fa-fw fa-tumblr icon-pad-right" aria-hidden="true"></i>Tumblr</a></li>
       {% endif %}      
       {% if author.twitter %}
-        <li><a href="https://x.com/{{ author.twitter }}">X</a></li>
+        <li><a class="author__social-link author__social-link--x" href="https://x.com/{{ author.twitter }}"><span class="author__social-icon" aria-hidden="true"><i class="fab fa-x-twitter"></i></span>X</a></li>
       {% endif %}
       {% if author.vine %}
         <li><a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine icon-pad-right" aria-hidden="true"></i>Vine</a></li>
