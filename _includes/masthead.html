@@ -2,7 +2,7 @@
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
+    <div class="masthead__menu{% if page.panda_greeting %} masthead__menu--panda{% endif %}">
       <nav id="site-nav" class="greedy-nav">
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
@@ -12,10 +12,19 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item{% if page.panda_greeting %} persist{% endif %}"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
+      {% if page.panda_greeting %}
+        <button id="panda-surprise-toggle" class="panda-surprise-toggle" type="button" aria-label="Show panda surprise" aria-controls="panda-greeting-host" aria-expanded="false" title="Show panda surprise" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="m12 2 1.4 5.1 5.1 1.4-5.1 1.4L12 15l-1.4-5.1-5.1-1.4 5.1-1.4L12 2Z"></path>
+            <path d="m19 15 .7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15Z"></path>
+            <path d="m4 15 .5 1.5L6 17l-1.5.5L4 19l-.5-1.5L2 17l1.5-.5L4 15Z"></path>
+          </svg>
+        </button>
+      {% endif %}
     </div>
   </div>
 </div>

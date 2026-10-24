@@ -10,17 +10,19 @@
   ];
 
   function mount() {
-    if (document.getElementById('panda-greeting-host')) return;
+    var toggle = document.getElementById('panda-surprise-toggle');
+    if (!toggle || document.getElementById('panda-greeting-host')) return;
 
-    // Choose afresh for each page load. Create only the chosen image so the
-    // other two are not downloaded on mobile connections.
+    // Choose afresh for each page load, but load the image only if requested.
     var panda = pandas[Math.floor(Math.random() * pandas.length)];
     var host = document.createElement('div');
     host.id = 'panda-greeting-host';
+    host.hidden = true;
     var shadow = host.attachShadow({ mode: 'open' });
     var style = document.createElement('style');
     style.textContent = [
       ':host { position: fixed; z-index: 10000; right: 16px; bottom: calc(10px + env(safe-area-inset-bottom)); display: block; width: 172px; height: 152px; pointer-events: none; font-family: "Nunito", "Segoe UI", "Microsoft YaHei", sans-serif; }',
+      ':host([hidden]) { display: none; }',
       '* { box-sizing: border-box; }',
       '.mascot { position: absolute; right: 0; bottom: 0; display: block; width: 155px; height: 152px; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: auto; -webkit-tap-highlight-color: transparent; }',
       '.mascot:focus-visible { outline: 2px solid #377d94; outline-offset: 2px; border-radius: 16px; }',
@@ -52,7 +54,6 @@
     button.setAttribute('aria-label', panda.name + '的水墨熊猫，点击打招呼');
 
     var image = document.createElement('img');
-    image.src = imageBase + panda.file;
     image.alt = '';
     image.draggable = false;
     image.decoding = 'async';
@@ -92,6 +93,36 @@
     });
     button.addEventListener('click', greet);
     button.addEventListener('focus', greet);
+
+    toggle.addEventListener('click', function () {
+      var showing = host.hidden;
+      host.hidden = !showing;
+      toggle.setAttribute('aria-expanded', String(showing));
+      toggle.setAttribute('aria-label', showing ? 'Hide panda surprise' : 'Show panda surprise');
+      toggle.title = showing ? 'Hide panda surprise' : 'Show panda surprise';
+
+      if (showing) {
+        if (!image.hasAttribute('src')) {
+          var greeted = false;
+          var greetLoaded = function () {
+            if (!greeted && !host.hidden) {
+              greeted = true;
+              greet();
+            }
+          };
+          image.addEventListener('load', greetLoaded, { once: true });
+          image.src = imageBase + panda.file;
+          if (image.complete && image.naturalWidth) greetLoaded();
+        } else if (image.complete && image.naturalWidth) {
+          greet();
+        }
+      } else {
+        clearTimeout(greetingTimer);
+        button.classList.remove('is-greeting');
+        if (shadow.activeElement === button) toggle.focus();
+      }
+    });
+    toggle.disabled = false;
   }
 
   if (document.readyState === 'loading') {
